@@ -1,0 +1,31 @@
+.sortable {
+	cursor: pointer;
+}
+.bg-header {
+	background: #333;
+}
+
+.btn, .btn:hover {
+	background-color: #f9d14d !important;
+	color: #333333;
+	border: none;
+	font-weight: bold;
+}
+
+label {
+	color: #585858;
+	font-weight: bold;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+	background-color: #f9d14d;
+}
+
+thead {
+	background: #333;
+	color: #fff;
+}
+
+.fa-sort-asc, .fa-sort-desc {
+	color: #fff;
+}

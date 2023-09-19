@@ -1,0 +1,53 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:latest
+    restart: always
+    container_name: postgres_container
+    environment:
+      POSTGRES_DB: mydb
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+    networks:
+      mynetwork:
+        ipv4_address: 172.19.0.2  # Static IP for postgres service
+    #volumes:
+    #  - postgres_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    container_name: pgadmin_container
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@pgadmin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      #SESSION_DB_PATH: /var/lib/pgadmin/sessions
+    ports:
+      - "8082:80"
+    networks:
+      mynetwork:
+        ipv4_address: 172.19.0.3  # Static IP for pgadmin service
+    #volumes:
+    #  - ./pgadmin:/var/lib/pgadmin/sessions  # Bind the sessions directory to a local directory
+
+  web:
+    build: .
+    container_name: web_container
+    ports:
+      - "8083:80"
+    volumes:
+      - ./www:/var/www/html   # Bind the local ./www directory to /var/www/html in the container
+    networks:
+      mynetwork:
+        ipv4_address: 172.19.0.4  # Static IP for web service
+
+networks:
+  mynetwork:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.19.0.0/16  # Use a different subnet to avoid overlap
+
+volumes:
+  postgres_data:
