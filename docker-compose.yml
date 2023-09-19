@@ -12,8 +12,6 @@ services:
     networks:
       mynetwork:
         ipv4_address: 172.19.0.2  # Static IP for postgres service
-    #volumes:
-    #  - postgres_data:/var/lib/postgresql/data
 
   pgadmin:
     image: dpage/pgadmin4
@@ -22,14 +20,11 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@pgadmin.com
       PGADMIN_DEFAULT_PASSWORD: admin
-      #SESSION_DB_PATH: /var/lib/pgadmin/sessions
     ports:
       - "8082:80"
     networks:
       mynetwork:
         ipv4_address: 172.19.0.3  # Static IP for pgadmin service
-    #volumes:
-    #  - ./pgadmin:/var/lib/pgadmin/sessions  # Bind the sessions directory to a local directory
 
   web:
     build: .
