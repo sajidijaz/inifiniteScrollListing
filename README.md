@@ -32,7 +32,32 @@ This project utilizes Docker for containerization. Ensure you have Docker instal
 
 **Database:**  PostgreSQL
 
+## Accessing the Database Using pgAdmin
 
+[pgAdmin](https://www.pgadmin.org/) is a popular open-source administration and management tool for PostgreSQL and other database systems. You can use pgAdmin to interact with your Dockerized PostgreSQL database. Follow these steps to access the database using pgAdmin:
+
+### Steps
+
+1. **Launch pgAdmin**: Using this http://localhost:8082/browser/ than you need to put the login credentials.
+	- Username: admin@pgadmin.com
+	- Password: admin
+
+2. **Connect to the Database**:
+	- Open pgAdmin and click the "Add New Server" icon
+	- In the "General" tab:
+		- Enter a name for the server in the "Name" field (e.g., My Database).
+	- In the "Connection" tab:
+		- Host name/address: Use the IP address or hostname of your Docker container running the PostgreSQL database. This could be the container's IP i.e. `172.19.0.2` if you've mapped the ports accordingly.
+		- Port: Use the port number you mapped when starting the Docker container (default is 5432 for PostgreSQL).
+		- Maintenance database: Use the name of your database (e.g., mydb).
+		- Username: Enter the username you configured for your Docker container (e.g., myuser).
+		- Password: Enter the password you configured for your Docker container (e.g., mypassword).
+
+3. **Save Connection**: Click the "Save" button to save the connection settings.
+
+4. **Connect**: Select the server you just added from the left sidebar and click the "Connect" icon (it looks like a plug).
+
+5. You should now be connected to your Dockerized PostgreSQL database using pgAdmin. You can use pgAdmin's graphical interface to manage your database, run SQL queries, and perform various database tasks.
 
 ## Migration
 
@@ -54,4 +79,5 @@ http://localhost:8083/immoheld/seed
 
 - [CodeIgniter 3 User Guide](https://codeigniter.com/userguide3/) Refer to the official CodeIgniter 3 user guide for more information on database migration and model.
 - [PostgreSQL Documentation](https://www.postgresql.org/docs/) Explore the PostgreSQL documentation for information on setting up and working with PostgreSQL databases.
+
 
