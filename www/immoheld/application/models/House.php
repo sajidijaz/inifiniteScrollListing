@@ -1,11 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class HouseModel extends CI_Model {
+class House extends CI_Model {
 
 	private const TABLE = 'houses';
 
-	public function getHouses(int $limit, int $offset, string $sortBy, string $sortOrder, array $filters) {
+	public function getHouses(int $limit, int $offset, string $sortBy, string $sortOrder, array $filters): array
+	{
 		$this->db->select('*');
 		$this->db->from(self::TABLE);
 

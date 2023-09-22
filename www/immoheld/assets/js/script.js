@@ -56,7 +56,7 @@ $(document).ready(function () {
 	$(document).off('click', '#search').on('click', '#search', function () {
 		isScroll = false;
 		page = 1;
-		moreDataAvailable = true; // Reset moreDataAvailable
+		moreDataAvailable = true;
 		tableBody.empty();
 		filterForm = $('#filterForm').serializeArray();
 		loadData();
@@ -77,7 +77,7 @@ $(document).ready(function () {
 		}
 		isScroll = false;
 		page = 1;
-		moreDataAvailable = true; // Reset moreDataAvailable
+		moreDataAvailable = true;
 		tableBody.empty();
 		loadData();
 		return false;
