@@ -7,7 +7,9 @@ The goal of this project is to create a real estate listings list with infinite 
 
 This project utilizes Docker for containerization. Ensure you have Docker installed on your system before proceeding.
 
+You can access the repository URL for cloning [here](https://github.com/sajidijaz/inifiniteScrollListing).
 
+Replace "<repository_url>" with the actual repository URL, and users can choose between SSH and HTTPS for cloning as per their preference.
 
 1. Clone the repository to your local machine:
 ```bash
@@ -49,7 +51,7 @@ This project utilizes Docker for containerization. Ensure you have Docker instal
 	- In the "Connection" tab:
 		- Host name/address: Use the IP address or hostname of your Docker container running the PostgreSQL database. This could be the container's IP i.e. `172.19.0.2` if you've mapped the ports accordingly.
 		- Port: Use the port number you mapped when starting the Docker container (default is 5432 for PostgreSQL).
-		- Maintenance database: Use the name of your database (e.g., mydb).
+		- Maintenance database: Use the name of your database (e.g., immoheld).
 		- Username: Enter the username you configured for your Docker container (e.g., myuser).
 		- Password: Enter the password you configured for your Docker container (e.g., mypassword).
 
