@@ -44,7 +44,9 @@ $(document).ready(function () {
 		});
 		return false;
 	}
+
 	loadData();
+
 	$(window).scroll(function () {
 		filterForm = $('#filterForm').serializeArray();
 		if ($(window).scrollTop() + $(window).height() >= tableBody.height() - 100) {

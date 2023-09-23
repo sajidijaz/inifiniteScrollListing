@@ -11,9 +11,9 @@ class House extends CI_Model {
 		$this->db->from(self::TABLE);
 
 		// Apply filters
-		foreach ($filters as $key => $filter) {
-			if (!empty($filter)) {
-				$this->db->where($key, $filter);
+		foreach ($filters as $key => $value) {
+			if (!empty($value)) {
+				$this->db->where(trim($key), trim($value));
 			}
 		}
 		$this->db->limit($limit, $offset);

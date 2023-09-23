@@ -42,9 +42,13 @@
 
 	<table class="table table-striped table-bordered" id="data-table">
 		<thead>
-			<th>Address</th>
-			<th class="sortable" data-columnName="price">Price <i class="fa fa-fw "></i></th>
-			<th class="sortable" data-columnName="size">Size <i class="fa fa-fw "></i></th>
+			<?php
+			/** @var array $columns */
+			foreach($columns as $column) { ?>
+				<th class="sortable" data-columnName="<?php echo strtolower($column); ?>">
+					<?php echo ucfirst($column); ?> <i class="fa fa-fw "></i>
+				</th>
+			<?php } ?>
 		</thead>
 		<tbody>
 		<!-- Table body content goes here -->
