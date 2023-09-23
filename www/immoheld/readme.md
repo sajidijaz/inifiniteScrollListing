@@ -3,6 +3,18 @@
 
 The goal of this project is to create a real estate listings list with infinite scroll. The listing details that must be displayed in the list include the address, price, and size of the properties. The list should also be sortable and have filters for price and size to enhance the user experience.
 
+## Configuration
+1. Locate the `env.example` file in your project directory. This file contains sample environment variable settings.
+2. Rename or copy the `env.example` file to a new file named `.env`:
+
+    - **Rename**: Right-click on the file and select "Rename." Ensure that the file is named exactly `.env`, including the dot at the beginning.
+
+    - **Copy**: Alternatively, you can make a copy of `env.example` and name the copy `.env`.
+
+3. Open the newly created `.env` file in a text editor and configure it with the actual environment variables, secrets, and settings needed for your project. This file is where you store sensitive information, such as API keys, database credentials, and other configuration details.
+
+4. Your application or development environment should be configured to read and use the values from the `.env` file. Many frameworks and libraries automatically load environment variables from this file when the application starts.
+
 ## Setup
 
 This project utilizes Docker for containerization. Ensure you have Docker installed on your system before proceeding.
@@ -19,11 +31,15 @@ Replace "<repository_url>" with the actual repository URL, and users can choose 
 ```bash
   cd <project_directory>
 ```
-3. Build and run the Docker containers:
+
+3. In the configuration step, please rename the `.env.example` file to `.env`.
+
+
+4. Build and run the Docker containers:
 ```bash
   docker-compose up -d
 ```
-4. Access the application by opening a web browser and navigating to http://localhost:8083/immoheld. You should see the CodeIgniter application running.
+5. Access the application by opening a web browser and navigating to http://localhost:8083/immoheld. You should see the CodeIgniter application running.
 
 
 
