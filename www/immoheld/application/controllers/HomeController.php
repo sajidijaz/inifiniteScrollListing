@@ -38,7 +38,7 @@ class HomeController extends CI_Controller
 			$rows = $this->load->view('partials/rows', ['records' => $records], true);
 			$response = ['error' => false, 'rows' => $isScroll && empty($records) ? null : $rows];
 		} catch (\Exception $e) {
-			$response = ['error' => true, 'rows' => null];
+			$response = ['error' => true, 'rows' => null, 'message' => $e->getMessage()];
 		}
 		echo \json_encode($response);
 	}

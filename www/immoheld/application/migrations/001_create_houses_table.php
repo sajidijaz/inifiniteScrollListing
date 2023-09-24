@@ -10,7 +10,7 @@ class Migration_Create_houses_table extends CI_Migration {
 			'id SERIAL PRIMARY KEY',
 			'address Text',
 			'price DECIMAL(10, 2)',
-			'size INT',
+			'size DECIMAL(10, 2)',
 			'created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP',
 			'updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP'
 		);

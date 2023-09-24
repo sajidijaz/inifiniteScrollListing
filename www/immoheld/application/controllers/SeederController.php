@@ -42,7 +42,7 @@ class SeederController extends CI_Controller {
 
 	private function generateRandomSize(): int
 	{
-		return rand(1000, 3000);
+		return rand(100, 1000);
 	}
 
 }
